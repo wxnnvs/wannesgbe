@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Parisienne&family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap"
+        rel="stylesheet">
+    <title>Wannes Ghysels</title>
+    <style>
+        * {
+            user-select: none;
+            scroll-behavior: smooth;
+        }
+
+        html {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        h1 {
+            font-size: 5em;
+            margin: 0;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin: 0;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 7px 12px;
+            font-size: 1em;
+            cursor: pointer;
+            border: 1px solid #333;
+            background-color: white;
+            border-radius: 3px;
+            transition-duration: 100ms;
+        }
+
+        button:hover {
+            background-color: #333;
+            color: #fff;
+        }
+
+        small {
+            font-size: 0.5em;
+            color: #666;
+        }
+
+        footer {
+            margin-top: 50px;
+            font-size: 0.8em;
+            color: #666;
+            width: 100%;
+        }
+
+        .section {
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .center {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .left {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            padding-left: 10%;
+            padding-right: 10%;
+            flex: 1;
+        }
+
+        #projects {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            width: 100%;
+            margin: 0;
+        }
+
+        .project {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            flex: 1;
+            max-width: 400px;
+
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project button {
+            margin-top: auto;
+        }
+
+        .parisienne-regular {
+            font-family: "Parisienne", cursive;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .zain-extralight {
+            font-family: "Zain", sans-serif;
+            font-weight: 200;
+            font-style: normal;
+        }
+
+        .zain-light {
+            font-family: "Zain", sans-serif;
+            font-weight: 300;
+            font-style: normal;
+        }
+
+        .zain-regular {
+            font-family: "Zain", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .zain-bold {
+            font-family: "Zain", sans-serif;
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        .zain-extrabold {
+            font-family: "Zain", sans-serif;
+            font-weight: 800;
+            font-style: normal;
+        }
+
+        .zain-black {
+            font-family: "Zain", sans-serif;
+            font-weight: 900;
+            font-style: normal;
+        }
+
+        .zain-light-italic {
+            font-family: "Zain", sans-serif;
+            font-weight: 300;
+            font-style: italic;
+        }
+
+        .zain-regular-italic {
+            font-family: "Zain", sans-serif;
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3.5em;
+            }
+
+            h2 {
+                font-size: 1.3em;
+            }
+
+            p {
+                font-size: 1em;
+            }
+
+            .section {
+                height: auto;
+                min-height: 100vh;
+            }
+
+            .left {
+                padding-left: 8%;
+                padding-right: 8%;
+                padding-top: 20px;
+                padding-bottom: 20px;
+            }
+
+            #projects {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .project {
+                max-width: 100%;
+            }
+
+            button {
+                padding: 7px 12px;
+                font-size: 0.95em;
+            }
+
+            small {
+                font-size: 0.5em;
+            }
+
+            footer {
+                margin-top: auto;
+                padding-top: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2.5em;
+            }
+
+            h2 {
+                font-size: 1.1em;
+            }
+
+            p {
+                font-size: 0.95em;
+            }
+
+            .section {
+                height: auto;
+                min-height: 100vh;
+            }
+
+            .left {
+                padding-left: 6%;
+                padding-right: 6%;
+                padding-top: 15px;
+                padding-bottom: 15px;
+            }
+
+            #projects {
+                gap: 15px;
+            }
+
+            button {
+                padding: 7px 12px;
+                font-size: 0.9em;
+            }
+
+            small {
+                font-size: 0.5em;
+            }
+
+            footer {
+                margin-top: auto;
+                padding-top: 15px;
+                font-size: 0.7em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="section center">
+        <h1 class="parisienne-regular">Wannes Ghysels</h1>
+        <p class="zain-regular">Coding enthusiast and privacy advocate.</p>
+        <button class="zain-regular" onclick="window.location = '#about'">Learn more</button>
+    </div>
+    <div class="section left" id="about">
+        <h2 class="zain-bold">Who am I?</h2>
+        <p class="zain-regular">My name is Wannes, I am a 17-year old high school student with a passion for coding,
+            privacy and freedom of speech.
+            I study Sciences and Mathematics in Ghent, Belgium in the 5th year.
+            I've mainly built some personal hobby projects, but right now my focus lies with CanSat,
+            an ESA inspired competition with the goal of engaging students in aerospace engineering.
+        </p>
+        <h2 class="zain-bold">What have I done?</h2>
+        <div id="projects">
+            <div class="project">
+                <h3 class="zain-bold" style="margin: 0 0 10px 0;">NovaGlider <small
+                        style="display: block; margin-top: 5px;">2025 - PRESENT</small></h3>
+                <p class="zain-regular" style="margin: 0 0 15px 0; line-height: 1.5;">The first CanSat ever to deploy
+                    other flying objects mid air.</p>
+                <button class="zain-regular" style="margin-top: auto; width: 100%; box-sizing: border-box;"
+                    onclick="window.open('https://novaglider.be', '_blank')">Learn
+                    More</button>
+            </div>
+            <div class="project">
+                <h3 class="zain-bold" style="margin: 0 0 10px 0;">Other Projects <small
+                        style="display: block; margin-top: 5px;">2023 - PRESENT</small></h3>
+                <p class="zain-regular" style="margin: 0 0 15px 0; line-height: 1.5;">All my personal projects that I
+                    have worked on.</p>
+                <button class="zain-regular" style="margin-top: auto; width: 100%; box-sizing: border-box;"
+                    onclick="window.open('https://github.com/wxnnvs', '_blank')">View on
+                    GitHub</button>
+            </div>
+        </div>
+        <footer class="center">
+            c 2026 Wannes Ghysels. All rights reserved.
+            Made with ❤️ in Belgium.
+        </footer>
+    </div>
+</body>
+
+</html>
