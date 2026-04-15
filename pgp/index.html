@@ -8,51 +8,97 @@
         * {
             user-select: none;
             scroll-behavior: smooth;
+            margin: 0;
+            padding: 0;
         }
-        
+
         body {
-            font-family: monospace;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
+            font-family: Arial, sans-serif;
             background-color: #f0f0f0;
+            color: #333;
         }
 
-        .center {
-            display: flex;
-            flex-direction: row;
-            gap: 20px;
-            align-items: center;
-            justify-content: center;
-            margin: 0;
-        }
-
-        button {
+        button,
+        .button {
+            color: #333;
+            text-decoration: none;
             margin-top: 20px;
             padding: 7px 12px;
             font-size: 1em;
             cursor: pointer;
             border: 1px solid #333;
-            background-color: white;
-            border-radius: 3px;
+            background: transparent;
+            /* border-radius: 3px; */
             transition-duration: 100ms;
         }
 
-        button:hover {
+        button:hover,
+        .button:hover {
             background-color: #333;
             color: #fff;
+        }
+
+        .button-wrapper {
+            display: flex;
+            gap: 10px;
+        }
+
+        small {
+            font-size: 0.8em;
+            color: #666;
+        }
+
+        .center {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .center-row {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .left {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 20px;
+            flex: 1;
+            margin: 15px;
+        }
+
+        .light {
+            color: #555;
+        }
+
+        .monospace {
+            font-family: monospace;
+        }
+
+        p {
+            font-size: 1.1em;
         }
     </style>
 </head>
 
 <body>
-    <p>Wannes' PGP Public Key</p>
     <div class="center">
-        <button onclick="copyKey()">copy</button>
-        <button onclick="downloadKey()">download</button>
+        <p class="monospace">Wannes' PGP Public Key</p>
+        <div class="center-row">
+            <div class="button-wrapper">
+                <a class="button" onclick="copyKey()">Copy</a>
+            </div>
+            <div class="button-wrapper">
+                <a class="button" href="/pgp/public.asc">Download</a>
+            </div>
+        </div>
     </div>
     <script>
         function copyKey() {
@@ -68,16 +114,6 @@
                 .catch(err => {
                     console.error('Failed to fetch key: ', err);
                 });
-        }
-
-        function downloadKey() {
-            const url = '/pgp/public.asc';
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'public.asc';
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
         }
     </script>
 </body>
