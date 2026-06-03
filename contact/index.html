@@ -119,14 +119,14 @@
                 <a class="button" onclick="copyKey()">Copy</a>
             </div>
             <div class="button-wrapper">
-                <a class="button" href="/pgp/public.asc">Download</a>
+                <a class="button" href="/contact/public.asc">Download</a>
             </div>
         </div>
         <p class="monospace hidden"><br>copied.</p>
     </div>
     <script>
         function copyKey() {
-            fetch('/pgp/public.asc')
+            fetch('/contact/public.asc')
                 .then(response => response.text())
                 .then(key => {
                     navigator.clipboard.writeText(key).then(() => {
